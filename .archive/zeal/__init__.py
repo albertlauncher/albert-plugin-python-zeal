@@ -4,6 +4,8 @@
 
  Synopsis: <trigger> <query>"""
 
+#  Copyright (c) 2022 Manuel Schneider
+
 from subprocess import run
 from albert import *
 
