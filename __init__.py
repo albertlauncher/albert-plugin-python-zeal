@@ -4,12 +4,12 @@
 import albert
 
 md_iid = "3.0"
-md_version = "3.0"
+md_version = "3.1"
 md_name = "Zeal"
 md_description = "Search in Zeal docs"
 md_license = "MIT"
 md_url = "https://github.com/albertlauncher/albert-plugin-python-zeal"
-md_authors = "@manuelschneid3r"
+md_authors = ["@ManuelSchneid3r"]
 md_bin_dependencies = ['zeal']
 
 def createItem(query: str):
