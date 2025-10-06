@@ -3,7 +3,7 @@
 
 import albert
 
-md_iid = "3.0"
+md_iid = "4.0"
 md_version = "3.1"
 md_name = "Zeal"
 md_description = "Search in Zeal docs"
@@ -17,7 +17,7 @@ def createItem(query: str):
         id=md_name,
         text=md_name,
         subtext=f"Search '{query}' in Zeal",
-        iconUrls=["xdg:zeal"],
+        iconFactory=lambda: albert.makeThemeIcon("zeal"),
         actions=[albert.Action("zeal", "Search in Zeal",
                                lambda q=query: albert.runDetachedProcess(['zeal', q]))]
     )
