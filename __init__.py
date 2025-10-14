@@ -17,7 +17,7 @@ def createItem(query: str):
         id=md_name,
         text=md_name,
         subtext=f"Search '{query}' in Zeal",
-        iconFactory=lambda: albert.makeThemeIcon("zeal"),
+        icon_factory=lambda: albert.makeThemeIcon("zeal"),
         actions=[albert.Action("zeal", "Search in Zeal",
                                lambda q=query: albert.runDetachedProcess(['zeal', q]))]
     )
