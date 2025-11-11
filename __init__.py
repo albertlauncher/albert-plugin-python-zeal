@@ -3,7 +3,7 @@
 
 import albert
 
-md_iid = "4.0"
+md_iid = "5.0"
 md_version = "3.1.1"
 md_name = "Zeal"
 md_description = "Search in Zeal docs"
@@ -37,11 +37,11 @@ class FBH(albert.FallbackHandler):
         return [createItem(s)] if s else []
 
 
-class Plugin(albert.PluginInstance, albert.TriggerQueryHandler):
+class Plugin(albert.PluginInstance, albert.GeneratorQueryHandler):
 
     def __init__(self):
         albert.PluginInstance.__init__(self)
-        albert.TriggerQueryHandler.__init__(self)
+        albert.GeneratorQueryHandler.__init__(self)
         self.fbh = FBH()
 
     def defaultTrigger(self):
@@ -50,6 +50,6 @@ class Plugin(albert.PluginInstance, albert.TriggerQueryHandler):
     def extensions(self):
         return [self, self.fbh]
 
-    def handleTriggerQuery(self, query):
-        if stripped := query.string.strip():
-            query.add(createItem(stripped))
+    def items(self, ctx):
+        if query := ctx.query.strip():
+            yield [createItem(query)]
