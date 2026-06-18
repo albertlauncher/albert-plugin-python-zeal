@@ -3,7 +3,7 @@
 
 import albert
 
-md_iid = "5.0"
+md_iid = "6.0"
 md_version = "3.1.2"
 md_name = "Zeal"
 md_description = "Search in Zeal docs"
